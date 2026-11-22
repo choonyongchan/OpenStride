@@ -1,0 +1,12 @@
+# docker compose up -d   -> http://localhost:8000
+# Put your Strava session in ./data/auth_state.json first (see README: "Log in").
+services:
+  dashboard:
+    build: .
+    image: openstride-dashboard
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file: .env
+    volumes:
+      - ./data:/data

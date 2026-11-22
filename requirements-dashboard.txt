@@ -1,0 +1,4 @@
+# The dashboard app (FastAPI + scheduler) on top of the openstride library in this repo.
+#   pip install -e . -r requirements-dashboard.txt
+fastapi>=0.115,<1
+uvicorn[standard]>=0.30

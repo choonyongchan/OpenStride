@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Club Dashboard</title>
+<meta name="description" content="Distance, activities and rankings for every member of the club.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-brand"><span class="badge" id="club-badge">CLUB</span><span id="club-name">Club</span></div>
+  <a class="nav-link" id="club-link" target="_blank" rel="noopener noreferrer">Club page</a>
+</nav>
+
+<main class="wrap">
+  <header class="header">
+    <div>
+      <h1 id="title">Club Dashboard</h1>
+      <p class="sub" id="subtitle"></p>
+    </div>
+    <div class="controls">
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-view="board" role="tab" aria-selected="true">Leaderboard</button>
+        <button class="tab" data-view="trend" role="tab" aria-selected="false">Trend</button>
+      </div>
+      <label class="date-pick">As of <select id="date-select" aria-label="Show standings as of"></select></label>
+    </div>
+  </header>
+
+  <div class="notice" id="sync-error" hidden></div>
+  <div class="empty" id="empty" hidden>No data yet. The first sync runs when the server starts; check back in a few minutes.</div>
+
+  <section class="tiles" id="tiles" aria-label="Club totals"></section>
+
+  <section id="view-board">
+    <h2 class="section-title">Awards</h2>
+    <div class="awards" id="awards"></div>
+
+    <div class="board-head">
+      <h2 class="section-title">Leaderboard <span class="muted" id="board-count"></span></h2>
+      <input type="search" id="search" placeholder="Find an athlete" aria-label="Find an athlete">
+    </div>
+    <div class="table-wrap">
+      <table class="board">
+        <thead><tr>
+          <th class="num">#</th>
+          <th class="name">Athlete</th>
+          <th class="num sortable" data-key="km" aria-sort="descending">km</th>
+          <th class="num">Gap</th>
+          <th class="num sortable" data-key="acts">Activities</th>
+          <th class="num sortable" data-key="time_s">Time</th>
+          <th class="num sortable" data-key="elev">Elev (m)</th>
+          <th class="num sortable" data-key="avg_speed_ms">Avg speed</th>
+          <th class="num sortable" data-key="longest">Longest</th>
+        </tr></thead>
+        <tbody id="board"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="view-trend" hidden>
+    <div class="charts">
+      <figure class="chart-card"><figcaption>Cumulative distance (km)</figcaption><div class="chart" data-key="km"></div></figure>
+      <figure class="chart-card"><figcaption>Cumulative activities</figcaption><div class="chart" data-key="activities"></div></figure>
+      <figure class="chart-card"><figcaption>Active athletes</figcaption><div class="chart" data-key="active"></div></figure>
+      <figure class="chart-card"><figcaption>Participation (% of members active)</figcaption><div class="chart" data-key="participation"></div></figure>
+    </div>
+    <h2 class="section-title">Weekly snapshot (Sundays)</h2>
+    <div class="table-wrap">
+      <table class="board">
+        <thead><tr><th class="name">Week ending</th><th class="num">km</th><th class="num">Activities</th>
+          <th class="num">Active</th><th class="num">Members</th><th class="num">Participation</th>
+          <th class="num">Elev (m)</th></tr></thead>
+        <tbody id="weekly"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span id="updated"></span> ·
+    Unofficial: not affiliated with or endorsed by Strava, Inc. For educational purposes only. ·
+    Built with OpenStride, compatible with Strava
+  </footer>
+</main>
+<div class="tooltip" id="tooltip" role="status" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>
