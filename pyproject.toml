@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "openstride"
 version = "0.1.0"
-description = "Strava's removed club endpoints (club activities, members, admins) read from the club web pages, plus stravalib's full API client. Compatible with Strava. Unofficial."
+description = "Compatible with Strava: club activities, members and admins for Python, plus stravalib's full API client. Unofficial."
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
@@ -46,4 +46,18 @@ include = ["src", "tests/library", "README.md", "LICENSE"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-markers = ["live: hits strava.com with a saved session (opt in with --live)"]
+markers = [
+    "live: hits strava.com with a saved session (opt in with --live)",
+    "e2e: real headless Chromium against a local fake site (needs `playwright install chromium`)",
+]
+
+[tool.coverage.run]
+source = ["openstride", "dashboard"]
+omit = ["tests/*"]
+
+[tool.coverage.paths]
+openstride = ["src", "*/site-packages/openstride"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true

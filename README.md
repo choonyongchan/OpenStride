@@ -183,9 +183,13 @@ again; nothing else needs restarting.
 
 ## Development
 
+Tests come in three layers, each run and coverage-gated in CI: `tests/library` (unit), `tests/dashboard`
+(integration), and `tests/e2e` (headless Chromium against a local fake site).
+
 ```bash
 pip install -e ".[test]" -r requirements-dashboard.txt httpx
-python -m pytest -q                          # offline: no browser, no Strava
+python -m playwright install chromium
+python -m pytest -q --cov                    # unit + integration + e2e, offline: never contacts Strava
 OPENSTRIDE_TEST_CLUB_ID=123456 python -m pytest tests/live --live   # vs live Strava: roster tallies, profile weeks = leaderboard
 python -m build && twine check dist/*        # the PyPI package (library only)
 ```
