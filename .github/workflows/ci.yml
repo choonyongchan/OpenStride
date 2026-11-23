@@ -26,7 +26,7 @@ jobs:
           - { name: e2e, path: tests/e2e, cov: ".", min: 75, browser: true }
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python }}
           cache: pip
