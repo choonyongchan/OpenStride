@@ -38,7 +38,7 @@ it out, or to change the code.
 
 - Docker Engine 24+ with the Compose plugin (`docker compose version`), or Docker Desktop on
   Windows or macOS.
-- Python 3.11+ **on a machine with a screen**, for the one-time Strava login. This can be your laptop.
+- Python 3.14+ **on a machine with a screen**, for the one-time Strava login. This can be your laptop.
 - A Strava account in the club, with its display language set to English. See the
   [library prerequisites](../library/README.md#prerequisites-and-assumptions).
 

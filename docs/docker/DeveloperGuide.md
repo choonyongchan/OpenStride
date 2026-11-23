@@ -90,8 +90,8 @@ To check a sync works without Strava, run the e2e suite on the host instead
 ### Change the Python version
 
 1. Edit `FROM python:3.X-slim`.
-2. Keep it within the versions CI tests: `python: ["3.11", "3.14"]` in `.github/workflows/ci.yml`. If
-   you move outside them, add the new version to CI first.
+2. Keep it on the version CI tests: `python-version: "3.14"` in `.github/workflows/ci.yml`. If you move
+   off it, add the new version to CI first.
 3. Rebuild with `--no-cache` so pip and Playwright install again.
 
 ### Change the Chromium version

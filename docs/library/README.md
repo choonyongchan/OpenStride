@@ -27,7 +27,7 @@ It has two entry points:
 
 | Requirement | Why |
 |---|---|
-| **Python 3.11 or newer** | The package requires it (`requires-python = ">=3.11"`). |
+| **Python 3.14 or newer** | The package requires it (`requires-python = ">=3.14"`). |
 | **Playwright's Chromium** | Every request runs in a real browser. Run `python -m playwright install chromium` once. To use an installed browser instead, pass `--channel chrome` / `msedge` or `browser_channel=`. |
 | **A Strava account that is in the club** | OpenStride sees exactly what that account sees on strava.com. |
 | **Strava's display language set to English** | OpenStride parses the numbers and labels Strava displays. Another language raises `UnsupportedLocale` instead of returning wrong numbers. Change it at strava.com/settings/display. |
