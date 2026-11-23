@@ -24,7 +24,7 @@ def main(argv: list[str] | None = None) -> int:
     Returns:
         Exit code: 0 on success, 1 on an OpenStrideError.
     """
-    p = argparse.ArgumentParser(prog="openstride", description="Strava club data from the website (unofficial).")
+    p = argparse.ArgumentParser(prog="openstride", description="Strava-compatible club data (unofficial).")
     p.add_argument("--version", action="version", version=f"openstride {__version__}")
     sub = p.add_subparsers(dest="command", required=True)
 

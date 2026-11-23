@@ -1,8 +1,8 @@
-"""Pure parsers for what Strava's web pages return. No I/O, no Playwright: everything here is unit-tested.
+"""Pure parsers for what Strava returns. No I/O, no Playwright: everything here is unit-tested.
 
-Strava's web pages show numbers as display text in the logged-in account's units ("5.23 km", "3.1 mi",
+Strava shows numbers as display text in the logged-in account's units ("5.23 km", "3.1 mi",
 "394 ft", "1h 5m"). These parsers accept metric and imperial units but only English labels and
-English number formatting ("1,234.5"). A page in another language raises UnsupportedLocale instead of
+English number formatting ("1,234.5"). Content in another language raises UnsupportedLocale instead of
 returning wrong numbers.
 """
 from __future__ import annotations

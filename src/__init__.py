@@ -1,8 +1,8 @@
-"""openstride: Strava's removed club endpoints (club activities, members, admins), read from the club web pages,
+"""openstride: compatible with Strava. Club activities, members and admins for Python,
 plus stravalib's full API client.
 
-Unofficial. Not affiliated with, endorsed or sponsored by Strava, Inc. For educational purposes only: using it
-may breach Strava's Terms of Service, and you are responsible for how you use it.
+Unofficial. Not affiliated with, endorsed or sponsored by Strava, Inc. For educational purposes only: review
+Strava's Terms of Service before use; you are responsible for how you use it.
 """
 from ._browser import login
 from .client import Client

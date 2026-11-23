@@ -155,7 +155,7 @@ def cumulate(daily: dict, weeks: dict, leaderboard: dict, synced_at: str, today:
 
 def fallback(daily: dict, acts: list[dict], synced_at: str, today: date, s: Settings) -> dict:
     """Athletes the leaderboard and profiles didn't just cover: last row + ledger activities it doesn't include
-    (dated after that row, or scraped after it was synced: late uploads). Upserted as today's "feed" row."""
+    (dated after that row, or fetched after it was synced: late uploads). Upserted as today's "feed" row."""
     by_athlete = _by_athlete(daily)
     pending = defaultdict(list)
     for a in acts:

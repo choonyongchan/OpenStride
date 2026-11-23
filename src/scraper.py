@@ -1,4 +1,4 @@
-"""ClubScraper: Strava's removed club endpoints, read from the club pages a logged-in member sees."""
+"""ClubScraper: Strava's removed club endpoints (activities, members, admins, leaderboard), for a logged-in member."""
 from __future__ import annotations
 
 import json
@@ -152,20 +152,20 @@ class AthleteWeeks(BaseModel):
 
 
 class ClubScraper:
-    """Reads Strava club data from the website with a saved login session (see `openstride login`).
+    """Strava club data with a saved login session (see `openstride login`).
 
     Use it as a context manager so the browser is closed::
 
         with ClubScraper("auth_state.json") as s:
             acts = s.get_club_activities(123456)
 
-    Every call opens pages as the logged-in account, so it sees what that account sees: activities visible to it,
+    Every call runs as the logged-in account, so it sees what that account sees: activities visible to it,
     and the full roster only if the account may view the club's members. Not thread-safe; one per thread.
     """
 
     def __init__(self, session_file: str | Path = DEFAULT_SESSION_FILE, *, headless: bool = True,
                  browser_channel: str | None = None, timezone: str | None = None, locale: str = DEFAULT_LOCALE):
-        """Set up the scraper; the browser opens on the first request.
+        """Set up; the browser opens on the first request.
 
         Args:
             session_file: Saved login from `openstride login` (Playwright storage state JSON).
@@ -199,7 +199,7 @@ class ClubScraper:
         self._browser.close()
 
     def _today(self) -> date:
-        """Today's date in the scraper's timezone.
+        """Today's date in the configured timezone.
 
         Returns:
             Today's date.

@@ -1,6 +1,6 @@
 """Return types. The three club models subclass stravalib's, so code written against
 stravalib.Client.get_club_activities / get_club_members / get_club_admins keeps working (isinstance checks,
-attribute names, units). They add the fields Strava's web pages expose but the old API never returned
+attribute names, units). They add fields the old API never returned
 (activity id, athlete id, start date, full name, ...).
 
 Units follow the Strava API: metres, seconds, sport types as Strava's enum strings.
@@ -44,7 +44,7 @@ class ClubAthlete(_sm.ClubAthlete):
     """A club member (the removed GET /clubs/{id}/members). Adds `id` and the full display `name`.
 
     Unlike the old API, `lastname` is the full last name, not an initial. `member` is "accepted" for everyone
-    on the roster; `admin` is None when the page didn't say; `owner` is always None (the page doesn't show it).
+    on the roster; `admin` is None when Strava didn't say; `owner` is always None (Strava doesn't expose it).
     """
 
     id: int | None = None
@@ -90,7 +90,7 @@ class ClubActivity(_m.ClubActivity):
     """A club activity (the removed GET /clubs/{id}/activities), with the fields the old API left out.
 
     `distance`, `moving_time` and `total_elevation_gain` are parsed from the numbers Strava displays, so they are
-    rounded the way the page rounds them (distance to 10 m, elevation to 1 m or 1 ft). `raw_type` is the sport
+    rounded the way Strava rounds them (distance to 10 m, elevation to 1 m or 1 ft). `raw_type` is the sport
     exactly as Strava sent it, kept even when stravalib's SportType doesn't know it yet.
     """
 

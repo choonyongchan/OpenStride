@@ -1,5 +1,4 @@
-"""The logged-in browser every scrape runs in. Requests are fetch()es made from inside a strava.com page, so they
-carry that page's cookies and headers exactly as the website's own requests do."""
+"""The logged-in browser session (Playwright, with the saved session file) every call runs in."""
 from __future__ import annotations
 
 import json

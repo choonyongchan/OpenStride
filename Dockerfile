@@ -1,4 +1,4 @@
-# openstride dashboard: FastAPI backend + static frontend + Chromium for the scraper.
+# openstride dashboard: FastAPI backend + static frontend + Chromium for the library.
 #   docker build -t openstride-dashboard .
 #   docker run -p 8000:8000 -v ./data:/data --env-file .env openstride-dashboard
 FROM python:3.14-slim

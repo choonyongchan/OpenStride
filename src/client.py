@@ -13,11 +13,11 @@ from .scraper import ClubScraper
 class Client(stravalib.Client):
     """A drop-in stravalib.Client. Every official API method (OAuth, athlete, activities, streams, segments,
     routes, uploads...) is stravalib's own; get_club_activities, get_club_members and get_club_admins, whose
-    endpoints Strava removed on 2026-09-01, read the club's web pages instead with a saved login session.
+    endpoints Strava removed on 2026-09-01, are provided by OpenStride with a saved login session.
 
         client = Client(access_token="...", session_file="auth_state.json")
         me = client.get_athlete()                              # official API
-        for a in client.get_club_activities(123456):           # web pages
+        for a in client.get_club_activities(123456):           # OpenStride
             print(a.athlete.firstname, a.distance)
         client.close()
 
@@ -26,11 +26,11 @@ class Client(stravalib.Client):
 
     def __init__(self, access_token: str | None = None, *args, session_file: str | Path = DEFAULT_SESSION_FILE,
                  scraper: ClubScraper | None = None, **kwargs):
-        """Make the client; the scraper is created on first club call.
+        """Make the client; the club backend is created on first club call.
 
         Args:
             access_token: OAuth token for the official API (optional if you only use the club methods).
-            session_file: Saved web login for the club methods (`openstride login`). Ignored if scraper is given.
+            session_file: Saved login for the club methods (`openstride login`). Ignored if scraper is given.
             scraper: A ClubScraper to use for the club methods instead of making one.
             *args, **kwargs: Passed to stravalib.Client.
         """
@@ -50,7 +50,7 @@ class Client(stravalib.Client):
         return self._scraper
 
     def close(self) -> None:
-        """Close the scraper's browser, if one was opened."""
+        """Close the club backend's browser, if one was opened."""
         if self._scraper is not None:
             self._scraper.close()
 
@@ -63,7 +63,7 @@ class Client(stravalib.Client):
         return self
 
     def __exit__(self, *exc) -> None:
-        """Close the scraper on leaving the context.
+        """Close the club backend on leaving the context.
 
         Args:
             *exc: Exception info, ignored.
