@@ -9,7 +9,7 @@ description = "Compatible with Strava: club activities, members and admins for P
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
-requires-python = ">=3.11"
+requires-python = ">=3.14"
 authors = [{ name = "choonyongchan" }]
 keywords = ["strava", "club", "running", "cycling", "fitness", "stravalib"]
 classifiers = [

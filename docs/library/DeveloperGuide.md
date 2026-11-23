@@ -186,7 +186,7 @@ OPENSTRIDE_TEST_CLUB_ID=123456 OPENSTRIDE_SESSION_FILE=auth_state.json \
   python -m pytest tests/live --live                       # real Strava; use sparingly
 ```
 
-CI (`.github/workflows/ci.yml`) runs unit, integration and e2e tests on Python 3.11 and 3.14. Live
+CI (`.github/workflows/ci.yml`) runs unit, integration and e2e tests on Python 3.14. Live
 tests are opt-in. `tests/conftest.py` skips them unless you pass `--live`.
 
 **Test data must be invented.** Use made-up names and ids such as `Alice Anon` and `Bob Bogus`, like the

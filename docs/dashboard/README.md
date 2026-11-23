@@ -45,7 +45,7 @@ Strava.
 
 ## Prerequisites
 
-- **Python 3.11 or newer**, and **Git**.
+- **Python 3.14 or newer**, and **Git**.
 - **A Strava account in the club**, with its display language set to **English**. To list every member,
   the account must be allowed to view the club's members.
 - **A screen for the first login.** This opens a browser window. Later syncs run headless.

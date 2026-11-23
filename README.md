@@ -53,7 +53,7 @@ with Client(session_file="auth_state.json") as client:
         print(a.athlete.name, a.sport_type, a.distance, a.start_date)
 ```
 
-You'll need Python 3.11+, a Strava account in the club, and Strava's display language set to English.
+You'll need Python 3.14+, a Strava account in the club, and Strava's display language set to English.
 
 ## Documentation
 
