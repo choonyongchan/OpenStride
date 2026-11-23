@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 320" width="1280" height="320" role="img" aria-label="OpenStride: Strava club data, restored. A runner in front of weekly distance charts.">
+  <title>OpenStride: Strava club data, restored</title>
+  <rect width="1280" height="320" fill="#FC4C02"/>
+
+  <!-- logo mark, inverted for the orange background -->
+  <rect x="64" y="96" width="112" height="112" rx="26" fill="#fff"/>
+  <path d="M92 176.5l17.5-31.5 10.5 17.5 10.5-21 17.5 35" fill="none" stroke="#FC4C02" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- wordmark -->
+  <g font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" fill="#fff">
+    <text x="204" y="162" font-size="76" font-weight="800" letter-spacing="-2">OpenStride</text>
+    <text x="206" y="204" font-size="28" font-weight="600">Strava club data, restored</text>
+    <text x="206" y="238" font-size="17" opacity="0.8">Unofficial · not affiliated with Strava, Inc.</text>
+  </g>
+
+  <!-- route under the runner -->
+  <path d="M600 284H1240" stroke="#fff" stroke-opacity="0.55" stroke-width="4" stroke-dasharray="2 12" stroke-linecap="round"/>
+
+  <!-- chart grid -->
+  <g stroke="#fff" stroke-opacity="0.14" stroke-width="2">
+    <path d="M868 110H1232M868 170H1232M868 230H1232"/>
+  </g>
+
+  <!-- weekly distance bars -->
+  <g fill="#fff" fill-opacity="0.28">
+    <rect x="880" y="210" width="30" height="60" rx="4"/>
+    <rect x="924" y="185" width="30" height="85" rx="4"/>
+    <rect x="968" y="200" width="30" height="70" rx="4"/>
+    <rect x="1012" y="160" width="30" height="110" rx="4"/>
+    <rect x="1056" y="175" width="30" height="95" rx="4"/>
+    <rect x="1100" y="130" width="30" height="140" rx="4"/>
+    <rect x="1144" y="145" width="30" height="125" rx="4"/>
+    <rect x="1188" y="100" width="30" height="170" rx="4"/>
+  </g>
+
+  <!-- cumulative trend line -->
+  <polyline points="895,256 939,236 983,220 1027,194 1071,172 1115,139 1159,110 1203,70" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#fff">
+    <circle cx="895" cy="256" r="5"/><circle cx="939" cy="236" r="5"/><circle cx="983" cy="220" r="5"/>
+    <circle cx="1027" cy="194" r="5"/><circle cx="1071" cy="172" r="5"/><circle cx="1115" cy="139" r="5"/>
+    <circle cx="1159" cy="110" r="5"/>
+  </g>
+  <circle cx="1203" cy="70" r="9" fill="#FC4C02" stroke="#fff" stroke-width="5"/>
+
+  <!-- runner -->
+  <g fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M765 118L740 182"/>
+    <path d="M760 130L788 152L812 134"/>
+    <path d="M760 130L732 142L714 168"/>
+    <path d="M740 182L778 212L770 258L788 258"/>
+    <path d="M740 182L718 222L682 238"/>
+  </g>
+  <circle cx="772" cy="92" r="18" fill="#fff"/>
+
+  <!-- motion lines -->
+  <g stroke="#fff" stroke-opacity="0.5" stroke-width="5" stroke-linecap="round">
+    <path d="M640 132H676M624 162H668M644 192H684"/>
+  </g>
+</svg>
